@@ -1,619 +1,689 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Redes Definidas por Software</title>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
-    <link type="text/css" rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <nav
-      class="navbar is-fixed-top"
-      role="navigation"
-      aria-label="main navigation"
-    >
-      <div class="navbar-brand">
-        <a class="navbar-item" href="#">
-          <strong>SDN - Redes Definidas por Software</strong>
-        </a>
 
-        <a
-          role="button"
-          class="navbar-burger"
-          aria-label="menu"
-          aria-expanded="false"
-          data-target="navbarMenu"
-        >
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-        </a>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Redes Definidas por Software</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+  <link type="text/css" rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="#">
+        <strong>SDN - Redes Definidas por Software</strong>
+      </a>
+
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarMenu">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+
+    <div id="navbarMenu" class="navbar-menu">
+      <div class="navbar-end">
+        <a href="#section1" class="navbar-item">Resumo</a>
+        <a href="#section2" class="navbar-item">Introdução</a>
+        <a href="#section6" class="navbar-item">Arquitetura</a>
+        <a href="#section3" class="navbar-item">Comunicação</a>
+        <a href="#section4" class="navbar-item">Casos de Uso</a>
+        <a href="#section5" class="navbar-item">Machine Learning</a>
+        <a href="#references" class="navbar-item">Referências</a>
       </div>
+    </div>
+  </nav>
 
-      <div id="navbarMenu" class="navbar-menu">
-        <div class="navbar-end">
-          <a href="#section1" class="navbar-item">Resumo</a>
-          <a href="#section2" class="navbar-item">Introdução</a>
-          <a href="#section3" class="navbar-item">Comunicação</a>
-          <a href="#section4" class="navbar-item">Casos de Uso</a>
-          <a href="#section5" class="navbar-item">Machine Learning</a>
-          <a href="#references" class="navbar-item">Referências</a>
-        </div>
-      </div>
-    </nav>
-
-    <section class="hero">
-      <div class="hero-body">
-        <div class="container">
-          <h1 class="hero-title">Redes Definidas por Software</h1>
-          <h2 class="subtitle">Igor, Maria e Yasmin</h2>
-        </div>
-      </div>
-    </section>
-
-    <!-- Resumo -->
-    <section id="section1" class="section">
+  <section class="hero">
+    <div class="hero-body">
       <div class="container">
-        <h1 class="title">Resumo (<i>Abstract</i>)</h1>
+        <h1 class="hero-title">Redes Definidas por Software</h1>
+        <h2 class="subtitle">Igor, Maria e Yasmin</h2>
+      </div>
+    </div>
+  </section>
+
+  <!-- Resumo -->
+  <section id="section1" class="section">
+    <div class="container">
+      <h1 class="title">Resumo (<i>Abstract</i>)</h1>
+      <p>
+        As Redes Definidas por Software (SDN) revolucionam a arquitetura de
+        redes ao separar o plano de controle do plano de dados, permitindo
+        maior flexibilidade e controle centralizado. A arquitetura SDN inclui
+        protocolos como o OpenFlow, com diferentes modelos (centralizados,
+        distribuídos e híbridos). SDN é aplicado para redes de IoT, 5G e data
+        centers em nuvem. A integração de IA e aprendizado de máquina melhora
+        automação e otimização, mas o controle centralizado também apresenta
+        novos desafios de segurança que precisam ser abordados.
+      </p>
+    </div>
+  </section>
+
+  <!-- Introdução -->
+  <section id="section2" class="section">
+    <div class="container">
+      <h1 class="title">Introdução às Redes Definidas por Software</h1>
+      <div class="subsection">
+        <h2 class="subsection-title">Definição e conceito de SDN</h2>
         <p>
-          As Redes Definidas por Software (SDN) revolucionam a arquitetura de
-          redes ao separar o plano de controle do plano de dados, permitindo
-          maior flexibilidade e controle centralizado. A arquitetura SDN inclui
-          protocolos como o OpenFlow, com diferentes modelos (centralizados,
-          distribuídos e híbridos). SDN é aplicado para redes de IoT, 5G e data
-          centers em nuvem. A integração de IA e aprendizado de máquina melhora
-          automação e otimização, mas o controle centralizado também apresenta
-          novos desafios de segurança que precisam ser abordados.
+          O <i>Software-Defined Networking</i> (SDN) é o conceito de uma rede
+          com uma arquitetura que separa o controle de tráfego da rede (planos
+          de controle) do hardware encarregado por transmitir os pacotes
+          (plano de dados). Uma SDN diverge das redes tradicionais, que
+          combinam os planos de controle e dados no mesmo dispositivo de
+          hardware. A Open Networking Foundation é a organização dedicada a
+          promover o uso da SDN e padronização do protocolo<i>OpenFlow</i>.
+        </p>
+        <p>
+          A decisão de como os pacotes irão transitar pela rede é feita a
+          partir do plano de controle. Em uma rede SDN, o plano de controle
+          tem o papel orquestrar os pacotes de maneira centralizada e
+          controlada por software, fornecendo uma visão global da rede. A
+          entidade controladora é denominada como
+          <i>Network Operating System</i> (NOS). O controlador central toma a
+          decisão de encaminhar os pacotes conforme o fluxo da rede. Já o
+          plano de dados diz respeito aos dispositivos responsáveis apenas
+          pelo encaminhamento de dados. Em uma rede SDN, dispositivos como
+          roteadores e switches tem apenas o papel de seguir instruções
+          fornecidas pelos controladores centrais.
+        </p>
+        <p>
+          O objetivo principal das redes definidas por software é tornar mais
+          fácil e flexível o gerenciamento das redes. Ao abstrair o controle
+          de pacotes do hardware, os administradores de rede têm a capacidade
+          de gerenciar e configurar as redes de uma maneira semelhante ao
+          gerenciamento de memória e outros recursos computacionais
+          <span class="quote">Nune et al. (2014)</span>. A possibilidade de
+          programar a rede facilita a implementação de alterações e a
+          otimização do desempenho da rede sem a necessidade de reconfigurar
+          manualmente os componentes de hardware.
         </p>
       </div>
-    </section>
-
-    <!-- Introdução -->
-    <section id="section2" class="section">
-      <div class="container">
-        <h1 class="title">Introdução às Redes Definidas por Software</h1>
-        <div class="subsection">
-          <h2 class="subsection-title">Definição e conceito de SDN</h2>
-          <p>
-            O <i>Software-Defined Networking</i> (SDN) é o conceito de uma rede
-            com uma arquitetura que separa o controle de tráfego da rede (planos
-            de controle) do hardware encarregado por transmitir os pacotes
-            (plano de dados). Uma SDN diverge das redes tradicionais, que
-            combinam os planos de controle e dados no mesmo dispositivo de
-            hardware. A Open Networking Foundation é a organização dedicada a
-            promover o uso da SDN e padronização do protocolo<i>OpenFlow</i>.
-          </p>
-          <p>
-            A decisão de como os pacotes irão transitar pela rede é feita a
-            partir do plano de controle. Em uma rede SDN, o plano de controle
-            tem o papel orquestrar os pacotes de maneira centralizada e
-            controlada por software, fornecendo uma visão global da rede. A
-            entidade controladora é denominada como
-            <i>Network Operating System</i> (NOS). O controlador central toma a
-            decisão de encaminhar os pacotes conforme o fluxo da rede. Já o
-            plano de dados diz respeito aos dispositivos responsáveis apenas
-            pelo encaminhamento de dados. Em uma rede SDN, dispositivos como
-            roteadores e switches tem apenas o papel de seguir instruções
-            fornecidas pelos controladores centrais.
-          </p>
-          <p>
-            O objetivo principal das redes definidas por software é tornar mais
-            fácil e flexível o gerenciamento das redes. Ao abstrair o controle
-            de pacotes do hardware, os administradores de rede têm a capacidade
-            de gerenciar e configurar as redes de uma maneira semelhante ao
-            gerenciamento de memória e outros recursos computacionais
-            <span class="quote">Nune et al. (2014)</span>. A possibilidade de
-            programar a rede facilita a implementação de alterações e a
-            otimização do desempenho da rede sem a necessidade de reconfigurar
-            manualmente os componentes de hardware.
-          </p>
-        </div>
-        <div class="subsection">
-          <h2 class="subsection-title">
-            Evolução das redes tradicionais para SDN
-          </h2>
-          <p>
-            Uma rede é composta por uma série de dispositivos de rede como
-            roteadores e switches. Na arquitetura clássica, a decisão de como os
-            dados serão encaminhados em uma rede é decidido localmente em cada
-            um dos dispositivos dessa rede. Com a democratização do uso da
-            internet, a arquitetura de rede tradicional enfrenta dificuldade no
-            gerenciamento e escalabilidade das redes modernas. Um exemplo disso
-            é que se a rede precisa de um redirecionamento de tráfego ou
-            aplicação de novas políticas, os administradores devem reconfigurar
-            manualmente os dispositivos, o que consome tempo e esforço;
-            sinalizando, assim, a rigidez da rede. Diante desse cenário, a
-            criação da SDN tinha como objetivo desenvolver redes de computadores
-            programáveis, permitindo a diminuição das barreiras até então
-            encontradas. Antes das SDNs surgiram outras tentativas, discutiremos
-            a seguir algumas delas.
-          </p>
-          <ol>
-            <li>
-              <strong>Active Networking:</strong> Nos anos 1990, Active
-              Networking sugeriu a ideia de uma infraestrutura de rede
-              programável para serviços personalizados, tendo duas abordagens:
-              Switches programáveis pelo usuário e cápsulas, que eram fragmentos
-              de programas incorporados em mensagens de usuário.
-            </li>
-            <li>
-              <strong>DCAN:</strong> O projeto
-              <i>Devolved Control of ATM Networks</i> (DCAN), tinha como ideia
-              central separar as funções de controle e gerenciamento dos
-              dispositivos de rede e delegá-las a entidades externas
-              especializada. Além disso, DCAN propunha um protocolo minimalista
-              entre o gerenciador e a rede.
-            </li>
-            <li>
-              <strong>4D Project:</strong> Em 2004, o projeto 4D sugeriu um
-              plano de decisão com uma visão globalizada da rede, apoiado por
-              planos de "disseminação" e "descoberta" para controlar o plano de
-              "dados", responsável pelo encaminhamento de tráfego. Ou seja, o
-              projeto propôs a ideia de uma clara separação entre o plano de
-              controle e o plano de dados.
-            </li>
-            <li>
-              <strong>NETCONF:</strong> Em 2006, o NETCONF foi proposto pelo
-              <strong>IETF Network Configuration Working Group</strong>, que é
-              um protocolo de gerenciamento para modificar a configuração de
-              dispositivos físicos de uma rede. A ideia por trás desse protocolo
-              era permitir que os dispositivos expusessem uma API pela qual
-              seria possível recuperar ou enviar dados de configuração.
-            </li>
-            <li>
-              <strong>Ethane:</strong> Em 2006 foi proposto pelo projeto SANE/
-              Ethane uma arquitetura de redes corporativas que poderiam usar um
-              controlador centralizado para gerenciar políticas e segurança na
-              rede.
-            </li>
-          </ol>
-        </div>
-      </div>
-    </section>
-
-    <!-- Protocolos de Comunicação -->
-    <section id="section3" class="section">
-      <div class="container">
-        <h1 class="title">Protocolos de Comunicação</h1>
+      <div class="subsection">
+        <h2 class="subsection-title">
+          Evolução das redes tradicionais para SDN
+        </h2>
         <p>
-          Nesta seção, analisamos duas arquiteturas de SDN: ForCES
-          <span class="quote"> Halpern and Salim (2010)</span>
-          e OpenFlow <span class="quote">McKeown et al. (2008)</span>. Tanto o
-          OpenFlow quanto o ForCES seguem o princípio fundamental das SDNs, que
-          é a separação entre os planos de controle e dados, mas diferem em
-          termos de design, arquitetura, modelo de encaminhamento e interface de
-          protocolo. <span class="quote">Nunes et al. (2014)</span>
-        </p>
-        <div class="subsection">
-          <h2 class="subsection-title">OpenFlow</h2>
-          <p>
-            O OpenFlow é um protocolo que permite a comunicação direta entre o
-            plano de controle (controladores) e o plano de dados (dispositivos
-            de rede, como switches e roteadores) em uma rede SDN. A imagem 1
-            ilustra sua arquitetura. Nela, os controladores se comunicam com um
-            switch OpenFlow através do protocolo. Esses switchs contém uma ou
-            mais tabelas de fluxo (flow tables) e uma camada de abstração.
-          </p>
-          <div class="image-frame">
-            <img src="openflow.png" />
-            <figcaption>Figura 1: Arquitetura OpenFlow</figcaption>
-          </div>
-          <ol>
-            <li>
-              <strong>Tabelas de Fluxo (Flow Table): </strong> É composta de diversas
-              <strong>entradas de fluxo</strong> (flow entries) que descrevem
-              como os pacotes pertencentes a um determinado fluxo serão
-              processados e encaminhados. Um fluxo é essencialmente um conjunto
-              de pacotes que compartilham características comuns (como endereço
-              IP de origem/destino, porta de entrada, entre outras). Cada
-              <strong>entrada de fluxo</strong> tem três componentes principais:
-              <ol>
-                <li>
-                  <strong>Campos de Correspondência (Match Fields/Rule):</strong>
-                  Essas são regras usadas para identificar e comparar os pacotes
-                  que chegam ao switch. Os campos de correspondência incluem
-                  informações dos cabeçalhos dos pacotes (como endereços IP,
-                  portas TCP/UDP), a porta de entrada do pacote, e outros
-                  metadados.
-                </li>
-                <li>
-                  <strong>Contadores (Counters/Statistics): </strong>Esses contadores são
-                  usados para coletar estatísticas sobre o fluxo, como o número
-                  de pacotes recebidos, a quantidade de bytes transmitidos e a
-                  duração do fluxo. Eles ajudam a monitorar o comportamento do
-                  fluxo e podem ser usados para análises de desempenho ou
-                  políticas de rede.
-                </li>
-                <li>
-                  <strong
-                    >Conjunto de Instruções (Instructions/Actions): </strong
-                  >São ações a serem executadas quando um pacote corresponder a
-                  uma regra de fluxo. As instruções podem incluir encaminhamento
-                  do pacote para uma porta específica, descartá-lo, modificar
-                  algum campo do cabeçalho, ou até mesmo enviar o pacote para o
-                  controlador. As instruções definem como o switch deve lidar
-                  com os pacotes correspondentes.
-                </li>
-              </ol>
-            </li>
-            <li>
-              <strong>Camada de Abstração (OpenFlow Client): </strong>Garante a comunicação segura
-              com o controlador SDN via o protocolo OpenFlow. Essa comunicação
-              permite que o controlador configure, modifique ou remova as regras
-              de fluxo do switch.
-            </li>
-          </ol>
-          <p>
-            Quando um pacote chega ao switch OpenFlow, o switch extrai os campos
-            do cabeçalho, como IP de origem e destino, e verifica suas tabelas
-            de fluxo para encontrar uma correspondência. Se o pacote
-            corresponder a uma entrada da tabela, o switch aplica a ação
-            associada, como encaminhar o pacote para uma porta específica. Por
-            exemplo, um pacote com IP de origem "192.168.1.10" e destino
-            "192.168.1.20" pode ser encaminhado para a porta 2, de acordo com a
-            regra definida. Se não houver correspondência (table-miss), o switch
-            executa uma ação predefinida, como descartar o pacote, encaminhá-lo
-            ao controlador ou buscar outra tabela. Caso o pacote seja enviado ao
-            controlador, ele pode instruir o switch a adicionar uma nova regra
-            para pacotes futuros, garantindo uma tomada de decisão mais dinâmica
-            e eficiente.
-          </p>
-        </div>
-        <div class="subsection">
-          <h2 class="subsection-title">ForCES</h2>
-          O ForCES (Forwarding and Control Element Separation) é uma arquitetura
-          e um protocolo que separa <strong>logicamente</strong> o plano de
-          controle do plano de encaminhamento dentro de um dispositivo de rede.
-          Diferentemente de arquiteturas como o OpenFlow, onde o plano de
-          controle é completamente separado dos dispositivos de rede, o ForCES
-          mantém o plano de controle e o plano de dados
-          <strong>próximos fisicamente</strong>, como no mesmo dispositivo ou
-          local. A arquitetura do ForCES tem dois compoentes principais:
-          <ol>
-            <li>
-              <strong>Elemento de Controle (Control Element - CE)</strong>:O CE
-              é responsável pelas funções de controle e sinalização. Ele instrui
-              o Elemento de Encaminhamento (FE) sobre como processar os pacotes,
-              utilizando o protocolo ForCES.
-            </li>
-            <li>
-              <strong
-                >Elemento de Encaminhamento (Forwarding Element - FE)</strong
-              >: O FE lida diretamente com o hardware de encaminhamento e é
-              responsável pelo tratamento de pacotes, de acordo com as
-              instruções do CE. Ele segue um modelo mestre-escravo, onde o CE é
-              o mestre que comanda o FE.
-            </li>
-            <li>
-              <strong>Blocos de Função Lógica (LFB)</strong>: Um componente
-              importante do ForCES é o Bloco de Função Lógica, localizados nos
-              FEs. Esse bloco permite ao CE controlar a configuração dos FEs e
-              definir como os pacotes serão processados.
-            </li>
-          </ol>
-        </div>
-        <div class="subsection">
-          <h2 class="subsection-title">Comparação</h2>
-          <p>
-            É possível dizer que o ForCES não segue o modelo de SDN de forma
-            rígida, ao contrário do OpenFlow, que faz uma separação total entre
-            o plano de controle (gerenciado por controladores centralizados) e o
-            plano de dados. Entretanto, a combinação de diferentes Blocos de
-            Função Lógica pode oferecer a mesma flexibilidade, para fins de
-            gerenciamento, administração e desenvolvimento da rede, que o
-            OpenFlow oferece <span class="quote">Tsou et al. (2012).</span>.
-            Ainda assim, devido à ampla adoção e suporte da comunidade, a
-            arquitetura de SDN baseada em OpenFlow é vista como o padrão, tanto
-            no desenvolvimento acadêmico quanto na implementação prática
-            <span class="quote">Nunes et al. (2014)</span>.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Casos de Uso -->
-    <section id="section4" class="section">
-      <div class="container">
-        <h1 class="title">Casos de Uso</h1>
-        <p>
-          Nesta seção, será discutido um caso de aplicação de filtros DNS
-          utilizando a tecnologia HPE Network Protector. Embora simples, este
-          exemplo ilustra de forma clara a aplicação e o uso de SDNs. Além
-          disso, serão abordados brevemente alguns dos papéis fundamentais que a
-          SDN desempenha no 5G, na Internet das Coisas (IoT) e nas redes em
-          nuvem, tópicos de grande relevância e alta demanda atualmente.
-        </p>
-        <div class="subsection">
-          <h2 class="subsection-title">HPE Network Protector</h2>
-          O HPE Network Protector SDN Application é uma aplicação de segurança
-          voltada para Redes Definidas por Software (SDN), desenvolvida pela
-          Hewlett Packard Enterprise (HPE). Uma das funcionalidades da
-          ferramenta é a Filtragem de DNS, em que a aplicação bloqueia consultas
-          DNS que estejam relacionadas a domínios maliciosos, como sites de
-          phishing, malware ou botnets. Isso evita que dispositivos na rede
-          acessem destinos comprometidos.
-          <span class="quote">Hewlett Packard Enterprise (2014)</span>
-          Os itens abaixo, aliado à Figura 2, sugerem um passo a passo de como
-          isso é feito utilizando SDNs:
-          <ol>
-            <li>
-              Quando uma solicitação de resolução de DNS é feita (por exemplo,
-              quando um usuário tenta acessar um site), o dispositivo de rede
-              (como um switch OpenFlow) intercepta essa solicitação.
-            </li>
-            <li>
-              O switch OpenFlow encaminha os pacotes DNS ao controlador SDN, que
-              tem uma visão global da rede e pode tomar decisões com base no
-              conteúdo desses pacotes.
-            </li>
-            <li>
-              O controlador SDN recebe o pacote DNS e repassa essa informação
-              para a aplicação de segurança, como o HPE Network Protector,
-              através de uma API na interface norte.
-            </li>
-            <li>
-              A aplicação consulta um Banco de Dados para verificar o domínio
-            </li>
-            <li>
-              Se a aplicação determinar que o domínio deve ser bloqueado, ela
-              envia uma instrução ao controlador SDN para tomar uma ação
-              específica.
-            </li>
-            <li>
-              O controlador pode intruir o switch OpenFlow a: descartar a
-              solicitação DNS antes que ela chegue ao servidor DNS ou
-              redirecionar a solicitação DNS para uma página de advertência ou
-              um servidor DNS interno.
-            </li>
-          </ol>
-          <p>
-            Essa prática garante que novas ameaças e domínios maliciosos possam
-            ser bloqueados dinamicamente, com atualizações enviadas diretamente
-            aos switches OpenFlow. Antes da adoção de SDN, o processo de
-            configuração de filtros e regras de segurança, como o filtro de DNS,
-            precisava ser feito manualmente, roteador a roteador ou switch a
-            switch. Isso envolvia configurações individuais em cada dispositivo
-            de rede, o que tornava a administração de grandes redes complexa,
-            demorada e propensa a erros.
-          </p>
-          <div class="image-frame">
-            <img src="hpe.png" />
-            <figcaption>
-              Figura 2: Funcionamento do Filtro de DNS por SDN
-            </figcaption>
-          </div>
-        </div>
-        <div class="subsection">
-          <h2 class="subsection-title">SDN e 5G</h2>
-          <p>
-            Uma das principais aplicações do 5G é o fatiamento da rede (Network
-            Slicing). Essa solução admite que uma infraestrutura física única
-            possa ser dividida em várias redes virtuais, cada uma configurada
-            para atender diferentes tipos de serviços (como baixa latência, alta
-            largura de banda, ou suporte massivo a dispositivos IoT). A partir
-            da separação dos planos de controle e dados, as SDNs permitem que as
-            políticas de rede para cada fatia sejam configuradas e aplicadas de
-            forma centralizada e programável.
-            <span class="quote">Babbar et al. (2022)</span>
-          </p>
-        </div>
-        <div class="subsection">
-          <h2 class="subsection-title">SDNs em redes IoT</h2>
-          <p>
-            Em redes IoT, em que dispositivos são heterogêneos e frequentemente
-            distribuídos, a SDN permite que administradores configurem,
-            monitorem e otimizem fluxos de dados de maneira eficiente,
-            garantindo qualidade de serviço (QoS) e segurança em tempo real. Por
-            exemplo, a SDN pode identificar dispositivos IoT vulneráveis e
-            isolar automaticamente o tráfego suspeito, reduzindo riscos de
-            ciberataques. Além disso, a SDN simplifica o gerenciamento da rede
-            ao automatizar a alocação de recursos e priorizar dispositivos ou
-            aplicações críticas, o que é essencial em ambientes de IoT com
-            requisitos variáveis de conectividade e processamento.
-            <span class="quote">Thorat et al. (2020)</span>
-          </p>
-        </div>
-        <div class="subsection">
-          <h2 class="subsection-title">SDNs e Redes em Nuvem</h2>
-          <p>
-            Em ambientes de nuvem, onde os recursos como servidores,
-            armazenamento e processamento, precisam ser provisionados de maneira
-            rápida e eficiente, as SDNs oferecem a capacidade de automatizar a
-            criação, configuração e gerenciamento de redes. Isso reduz o tempo e
-            o esforço necessário para provisionar redes virtuais e ajustar a
-            infraestrutura em resposta a demandas de cargas de trabalho em tempo
-            real.
-            <span class="quote">Lin and Lin (2014)</span>
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Machine Learning -->
-    <section id="section5" class="section">
-      <div class="container">
-        <h1 class="title">Avanços em SDN com Machine Learning e IA</h1>
-        <p>
-          Nos últimos anos, com o avanço da tecnologia e o rápido crescimento da
-          Internet e das tecnologias de comunicação móvel, a infraestrutura, os
-          dispositivos e os recursos nos sistemas de rede tornaram-se mais
-          avançados e complexos. Para gerenciar, organizar, otimizar e manter os
-          sistemas de rede, muitas informações precisam ser consideradas e
-          utilizadas. No entanto, era difícil usar aprendizado de máquina em
-          redes tradicionalmente fechadas
-          <span class="quote">Shirmarz and Faezi (2023).</span>. A arquitetura
-          SDN separa o plano de controle do plano de dados, o que permite maior
-          flexibilidade e programabilidade da rede, o que criou a oportunidade
-          para pesquisadores utilizarem técnicas de aprendizado de máquina em
-          diferentes aspectos da rede. A seguir serão citados algumas linhas em
-          que o aprendizado tem sido aplicado ao contexto das SDN:
+          Uma rede é composta por uma série de dispositivos de rede como
+          roteadores e switches. Na arquitetura clássica, a decisão de como os
+          dados serão encaminhados em uma rede é decidido localmente em cada
+          um dos dispositivos dessa rede. Com a democratização do uso da
+          internet, a arquitetura de rede tradicional enfrenta dificuldade no
+          gerenciamento e escalabilidade das redes modernas. Um exemplo disso
+          é que se a rede precisa de um redirecionamento de tráfego ou
+          aplicação de novas políticas, os administradores devem reconfigurar
+          manualmente os dispositivos, o que consome tempo e esforço;
+          sinalizando, assim, a rigidez da rede. Diante desse cenário, a
+          criação da SDN tinha como objetivo desenvolver redes de computadores
+          programáveis, permitindo a diminuição das barreiras até então
+          encontradas. Antes das SDNs surgiram outras tentativas, discutiremos
+          a seguir algumas delas.
         </p>
         <ol>
           <li>
-            <strong>Otimização de Roteamento: </strong>Em uma rede definida por
-            software, a tarefa de determinar o melhor caminho para os pacotes
-            viajarem de um ponto a outro pode considerar múltiplos parâmetros,
-            como latência, largura de banda, uso de recursos e condições de rede
-            em tempo real. Nesse problema, o aprendizado de máquina é aplicado
-            para resolver o problema de roteamento em SDN por meio de algoritmos
-            que aprendem padrões e características do tráfego da rede.
-            Algoritmos de aprendizado por reforço, aprendizado supervisionado e
-            não supervisionados são aplicados para esse problema
-            <span class="quote">Amin et al. (2021).</span>.
+            <strong>Active Networking:</strong> Nos anos 1990, Active
+            Networking sugeriu a ideia de uma infraestrutura de rede
+            programável para serviços personalizados, tendo duas abordagens:
+            Switches programáveis pelo usuário e cápsulas, que eram fragmentos
+            de programas incorporados em mensagens de usuário.
           </li>
           <li>
-            <strong>Segurança da Rede: </strong>Como a arquitetura de controle
-            de rede é centralizada e programável, a implementação de soluções
-            dinâmicas de segurança utilizando aprendizado de máquina é possível.
-            Nesse caso, aprendizado de máquina é aplicado na detecção de
-            anomalias na rede, na mitigação de ataques DDoS, identificação de
-            caminhos maliciosos e entre outros.
+            <strong>DCAN:</strong> O projeto
+            <i>Devolved Control of ATM Networks</i> (DCAN), tinha como ideia
+            central separar as funções de controle e gerenciamento dos
+            dispositivos de rede e delegá-las a entidades externas
+            especializada. Além disso, DCAN propunha um protocolo minimalista
+            entre o gerenciador e a rede.
           </li>
           <li>
-            <strong>Qualidade de Experiência (QoE): </strong> Qualidade de
-            Experiência (QoE) refere-se à percepção do usuário sobre a qualidade
-            do serviço fornecido por uma rede, que pode ser influenciada por
-            fatores como latência, taxa de perda de pacotes, largura de banda, e
-            tempo de resposta. Em redes definidas por software, modelos
-            supervisionados são aplicados para prever a demanda futura de
-            tráfego com base em padrões anteriores, assim, permitindo que a rede
-            se ajuste proativamente a alocação de recursos, como largura de
-            banda <span class="quote">Abar et al. (2017)</span>.
+            <strong>4D Project:</strong> Em 2004, o projeto 4D sugeriu um
+            plano de decisão com uma visão globalizada da rede, apoiado por
+            planos de "disseminação" e "descoberta" para controlar o plano de
+            "dados", responsável pelo encaminhamento de tráfego. Ou seja, o
+            projeto propôs a ideia de uma clara separação entre o plano de
+            controle e o plano de dados.
+          </li>
+          <li>
+            <strong>NETCONF:</strong> Em 2006, o NETCONF foi proposto pelo
+            <strong>IETF Network Configuration Working Group</strong>, que é
+            um protocolo de gerenciamento para modificar a configuração de
+            dispositivos físicos de uma rede. A ideia por trás desse protocolo
+            era permitir que os dispositivos expusessem uma API pela qual
+            seria possível recuperar ou enviar dados de configuração.
+          </li>
+          <li>
+            <strong>Ethane:</strong> Em 2006 foi proposto pelo projeto SANE/
+            Ethane uma arquitetura de redes corporativas que poderiam usar um
+            controlador centralizado para gerenciar políticas e segurança na
+            rede.
           </li>
         </ol>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="section" id="references">
-      <div class="container">
-        <h1 class="title">Referências</h1>
+  <section id="section6" class="section">
+    <div class="container">
+      <h1 class="title"> Arquitetura </h1>
+      <p>
+        A principal característica de SDN's é o desacoplamento das partes da rede. O plano de controle, responsável pela
+        tomada de decisões, é extraído dos dispositivos individuais e centralizado em um controlador baseado em
+        software. Esse controlador possui uma visão holística de toda a rede, permitindo gerenciamento mais eficiente,
+        rápido desenvolvimento de serviços, e a possibilidade de ajustar dinâmica as condições de rede. O plano de dados
+        continua restrito aos dispositivos de rede, que passam a operar como simples encaminhadores de pacote que seguem
+        as regras do controlador.
+        Essa arquitetura é construída em cima de protocolos e interfaces padronizadas, como o OpenFlow, que facilitam a
+        comunicação entre o controlador e dispositivos de rede (interfaces southbound), assim como entre o controlador e
+        as aplicações (interfaces northbound). Através desse modelo de interface, SDN promove interoperabilidade, reduz
+        dependência em hardware proprietários e incentiva inovação através do desenvolvimento de software.
+      </p>
+      <div class="subsection">
+        <h2 class="subsection-title">Plano de Controle</h2>
+        <p>
+          O controlador SDN é o principal componente da arquitetura e funciona como uma espécie de cérebro da rede. É
+          nele
+          em que as funções do plano de controle são centralizadas, além de ser o responsável por tomar as decisões de
+          roteamento e por garantir que políticas sejam aplicadas em toda a rede. Por ter uma visão global, ele pode
+          mais
+          facilmente otimizar o uso de recursos na rede e se adaptar a mudanças de demanda. Além disso, o controlador
+          também expõe APIs que permitem que desenvolvedores criem aplicações e serviços que podem alterar os
+          comportamentos da rede, abstraindo assim o gerenciamento para software.
+          O controlador obtém essa visão da rede através da comunicação com os outros componentes, que é feita pelo uso
+          de
+          interfaces southbound. Essas interfaces, ou protocolos, são responsáveis por traduzir as instruções de alto
+          nível para as configurações específicas de cada dispositivo. Tais protocolos permitem que o controlador envie
+          comandos que modificam a tabela de encaminhamento de roteadores, colete estatísticas e informações sobre a
+          condição do dispositivo, e detecte a mudança na topologia da rede. E como o plano de controle pode ser
+          integrado
+          com software, é possível criar todo tipo de automatização baseado em interfaces southbound, como o controle
+          dinâmico de tráfego com o uso de balanceadores de carga.
+          Existem alguns modelos de controlador SDN no mercado, cada um com suas particularidades, para citar alguns:
+        <ul>
+          <li><strong>OpenDaylight:</strong> Uma plataforma open-source modular que dá suporte para múltiplos protocolos
+            southbound e é amplamente utilizada para SDN e Funções de Virtualização de Rede (NFV).</li>
+          <li><strong> ONON (Open Network Operating System): </strong> Projetado par alta disponibilidade e
+            escalabilidade, adequado para rede de larga escala. </li>
+          <li><strong>Ryu:</strong> Um framework baseado em componentes, escrito em Python, ideal para desenvolvedor e
+            pesquisadores</li>
+          <li><strong>Cisco Application Policy Infrastructure Controller (APIC):</strong> Um controlador comercial da
+            Cisco, que integra os hardware e softwares proprietários da empresa. </li>
+        </ul>
+        </p>
+      </div>
+      <div class="subsection">
+        <h2 class="subsection-title">Plano de Dados</h2>
+        <p>
+          Diferentemente de redes tradicionais em que os dispositivos de rede individualmente tomam decisões sobre
+          roteamento, na arquitetura SDN, o papel de switches e roteadores é simplificado para simples encaminhadores de
+          pacote. Eles ficam responsáveis por lidar com os pacotes de dados com base nas regras de fluxo determinadas
+          pelo controlador da SDN.
+          Várias vantagens decorrem dessa característica da arquitetura SDN. Em primeiro lugar, com a redução de
+          complexidade, os dispositivos de rede podem ser construídos com hardware mais simples, reduzindo seus custos.
+          Além disso, dispositivos mais simples reduzem a heterogeneidade da rede, o que torna o gerenciamento mais
+          simples e reduz a probabilidade de erros de configuração. Outro ponto também é a flexibilidade, já que agora
+          roteadores e switches podem ser atualizados ou reprogramados on-the-fly, através do controlador.
+        </p>
+      </div>
+      <div class="subsection">
+        <h2 class="subsection-title">Interfaces de Comunicação</h2>
+        <p>
+          Como já mencionado, a comunicação entre o controlador e os dispositivos de baixo nível da rede é facilitada
+          pela interface southbound, com destaque para a mais famosa delas, o protocolo OpenFlow. Já as interfaces
+          northbound dizem respeito à conexão do controlador com as aplicações e serviços de rede. Essas interface são
+          tipicamente API's, que permitem a alteração do comportamento da rede através de software. RESTful API's são as
+          mais comuns,
+          e provêm uma maneira padronizada de interação com o controlador. Dentre as possibilidade de uma aplicação,
+          podemos citar
+          enviar requisições de rede, definir políticas de controle de tráfego, implementar medidas de segurança e
+          monitorar a
+          performance da rede.
+        </p>
+      </div>
+    </div>
+    <div class="image-frame">
+      <img src="arq.png" />
+      <figcaption>Figura 1: Arquitetura SDN</figcaption>
+    </div>
+  </section>
+
+  <!-- Protocolos de Comunicação -->
+  <section id="section3" class="section">
+    <div class="container">
+      <h1 class="title">Protocolos de Comunicação</h1>
+      <p>
+        Nesta seção, analisamos duas arquiteturas de SDN: ForCES
+        <span class="quote"> Halpern and Salim (2010)</span>
+        e OpenFlow <span class="quote">McKeown et al. (2008)</span>. Tanto o
+        OpenFlow quanto o ForCES seguem o princípio fundamental das SDNs, que
+        é a separação entre os planos de controle e dados, mas diferem em
+        termos de design, arquitetura, modelo de encaminhamento e interface de
+        protocolo. <span class="quote">Nunes et al. (2014)</span>
+      </p>
+      <div class="subsection">
+        <h2 class="subsection-title">OpenFlow</h2>
+        <p>
+          O OpenFlow é um protocolo que permite a comunicação direta entre o
+          plano de controle (controladores) e o plano de dados (dispositivos
+          de rede, como switches e roteadores) em uma rede SDN. A imagem 1
+          ilustra sua arquitetura. Nela, os controladores se comunicam com um
+          switch OpenFlow através do protocolo. Esses switchs contém uma ou
+          mais tabelas de fluxo (flow tables) e uma camada de abstração.
+        </p>
+        <div class="image-frame">
+          <img src="openflow.png" />
+          <figcaption>Figura 2: Arquitetura OpenFlow</figcaption>
+        </div>
         <ol>
           <li>
-            Abar, T., Letaifa, A., & Asmi, S. (2017, 06). Machine learning based
-            qoe prediction in sdn networks. In (p. 1395-1400). DOI:
-            10.1109/IWCMC.2017.7986488
+            <strong>Tabelas de Fluxo (Flow Table): </strong> É composta de diversas
+            <strong>entradas de fluxo</strong> (flow entries) que descrevem
+            como os pacotes pertencentes a um determinado fluxo serão
+            processados e encaminhados. Um fluxo é essencialmente um conjunto
+            de pacotes que compartilham características comuns (como endereço
+            IP de origem/destino, porta de entrada, entre outras). Cada
+            <strong>entrada de fluxo</strong> tem três componentes principais:
+            <ol>
+              <li>
+                <strong>Campos de Correspondência (Match Fields/Rule):</strong>
+                Essas são regras usadas para identificar e comparar os pacotes
+                que chegam ao switch. Os campos de correspondência incluem
+                informações dos cabeçalhos dos pacotes (como endereços IP,
+                portas TCP/UDP), a porta de entrada do pacote, e outros
+                metadados.
+              </li>
+              <li>
+                <strong>Contadores (Counters/Statistics): </strong>Esses contadores são
+                usados para coletar estatísticas sobre o fluxo, como o número
+                de pacotes recebidos, a quantidade de bytes transmitidos e a
+                duração do fluxo. Eles ajudam a monitorar o comportamento do
+                fluxo e podem ser usados para análises de desempenho ou
+                políticas de rede.
+              </li>
+              <li>
+                <strong>Conjunto de Instruções (Instructions/Actions): </strong>São ações a serem executadas quando um
+                pacote corresponder a
+                uma regra de fluxo. As instruções podem incluir encaminhamento
+                do pacote para uma porta específica, descartá-lo, modificar
+                algum campo do cabeçalho, ou até mesmo enviar o pacote para o
+                controlador. As instruções definem como o switch deve lidar
+                com os pacotes correspondentes.
+              </li>
+            </ol>
           </li>
           <li>
-            Amin, R., Rojas, E., Aqdus, A., Ramzan, S., Casillas-Perez, D., &
-            Arco, J. (2021, 07). A survey on machine learning techniques for
-            routing optimization in sdn. IEEE Access, PP, 1-1. DOI:
-            10.1109/ACCESS.2021.3099092
+            <strong>Camada de Abstração (OpenFlow Client): </strong>Garante a comunicação segura
+            com o controlador SDN via o protocolo OpenFlow. Essa comunicação
+            permite que o controlador configure, modifique ou remova as regras
+            de fluxo do switch.
+          </li>
+        </ol>
+        <p>
+          Quando um pacote chega ao switch OpenFlow, o switch extrai os campos
+          do cabeçalho, como IP de origem e destino, e verifica suas tabelas
+          de fluxo para encontrar uma correspondência. Se o pacote
+          corresponder a uma entrada da tabela, o switch aplica a ação
+          associada, como encaminhar o pacote para uma porta específica. Por
+          exemplo, um pacote com IP de origem "192.168.1.10" e destino
+          "192.168.1.20" pode ser encaminhado para a porta 2, de acordo com a
+          regra definida. Se não houver correspondência (table-miss), o switch
+          executa uma ação predefinida, como descartar o pacote, encaminhá-lo
+          ao controlador ou buscar outra tabela. Caso o pacote seja enviado ao
+          controlador, ele pode instruir o switch a adicionar uma nova regra
+          para pacotes futuros, garantindo uma tomada de decisão mais dinâmica
+          e eficiente.
+        </p>
+      </div>
+      <div class="subsection">
+        <h2 class="subsection-title">ForCES</h2>
+        O ForCES (Forwarding and Control Element Separation) é uma arquitetura
+        e um protocolo que separa <strong>logicamente</strong> o plano de
+        controle do plano de encaminhamento dentro de um dispositivo de rede.
+        Diferentemente de arquiteturas como o OpenFlow, onde o plano de
+        controle é completamente separado dos dispositivos de rede, o ForCES
+        mantém o plano de controle e o plano de dados
+        <strong>próximos fisicamente</strong>, como no mesmo dispositivo ou
+        local. A arquitetura do ForCES tem dois compoentes principais:
+        <ol>
+          <li>
+            <strong>Elemento de Controle (Control Element - CE)</strong>:O CE
+            é responsável pelas funções de controle e sinalização. Ele instrui
+            o Elemento de Encaminhamento (FE) sobre como processar os pacotes,
+            utilizando o protocolo ForCES.
           </li>
           <li>
-            Babbar, H., Rani, S., AlZubi, A. A., Singh, A., Nasser, N., & Ali,
-            A. (2022). Role of network slicing in software defined networking
-            for 5g: Use cases and future directions. IEEE Wireless
-            Communications, 29 (1), 112-118. DOI: 10.1109/MWC.001.2100318
+            <strong>Elemento de Encaminhamento (Forwarding Element - FE)</strong>: O FE lida diretamente com o hardware
+            de encaminhamento e é
+            responsável pelo tratamento de pacotes, de acordo com as
+            instruções do CE. Ele segue um modelo mestre-escravo, onde o CE é
+            o mestre que comanda o FE.
           </li>
           <li>
-            Halpern, J. M., & Salim, J. H. (2010, March). Forwarding and Control
-            Element Separation (ForCES) Forwarding Element Model (No. 5812). RFC
-            5812. RFC Editor. Retrieved from https://www.rfc
-            -editor.org/info/rfc5812 DOI: 10.17487/RFC5812
-          </li>
-          <li>
-            Hewlett Packard Enterprise. (2014). Hp van sdn controller: Dns-based
-            malware detection and mitigation [Computer software manual].
-            Retrieved from https://www.hpe.com/us/en/networking.html (HP
-            Networking Documentation)
-          </li>
-          <li>
-            Lin, L., & Lin, P. (2014). Software-defined networking (sdn) for
-            cloud applications. In Z. Mahmood (Ed.), Cloud computing:
-            Challenges, limitations and r&d solutions (pp. 209–233). Cham:
-            Springer International Publishing. Retrieved from https://doi
-            .org/10 .1007/978 -3 -319 -10530 -7 9 DOI:
-            10.1007/978-3-319-10530-79
-          </li>
-          <li>
-            McKeown, N., Anderson, T., Balakrishnan, H., Parulkar, G., Peterson,
-            L., Rexford, J., . . . Turner, J. (2008, March). Openflow: enabling
-            innovation in campus networks. SIGCOMM Comput. Commun. Rev., 38 (2),
-            69–74. Retrieved from https://doi .org/10 .1145/1355734 .1355746
-            DOI: 10.1145/1355734.1355746
-          </li>
-          <li>
-            Nunes, B. A. A., Mendonca, M., Nguyen, X.-N., Obraczka, K., &
-            Turletti, T. (2014). A survey of softwaredefined networking: Past,
-            present, and future of programmable networks. IEEE Communications
-            Surveys Tutorials, 16 (3), 1617-1634. DOI:
-            10.1109/SURV.2014.012214.00180
-          </li>
-          <li>
-            Shirmarz, A., & Faezi, S. (2023, 06). A comprehensive survey on
-            machine learning using in software defined networks (sdn).
-            Human-Centric Intelligent Systems, 3 . DOI:
-            10.1007/s44230-023-00025-3
-          </li>
-          <li>
-            Thorat, P., Singh, S., Bhat, A., Lakshmi Narasimhan, V., & Jain, G.
-            (2020). Sdn-enabled iot: Ensuring reliability in iot networks
-            through software defined networks. In M. A. Matin (Ed.), Towards
-            cognitive iot networks (pp. 33–53). Cham: Springer International
-            Publishing. Retrieved from https://doi.org/10.1007/978-3-030-42573-9
-            4 DOI: 10.1007/978-3-030-42573-94
-          </li>
-          <li>
-            Tsou, T., Shi, X., Huang, J., Wang, Z., & Yin, X. (2012). Analysis
-            of comparisons between openflow and forces.. Retrieved from
-            https://api.semanticscholar.org/CorpusID:64043199
+            <strong>Blocos de Função Lógica (LFB)</strong>: Um componente
+            importante do ForCES é o Bloco de Função Lógica, localizados nos
+            FEs. Esse bloco permite ao CE controlar a configuração dos FEs e
+            definir como os pacotes serão processados.
           </li>
         </ol>
       </div>
-    </section>
+      <div class="subsection">
+        <h2 class="subsection-title">Comparação</h2>
+        <p>
+          É possível dizer que o ForCES não segue o modelo de SDN de forma
+          rígida, ao contrário do OpenFlow, que faz uma separação total entre
+          o plano de controle (gerenciado por controladores centralizados) e o
+          plano de dados. Entretanto, a combinação de diferentes Blocos de
+          Função Lógica pode oferecer a mesma flexibilidade, para fins de
+          gerenciamento, administração e desenvolvimento da rede, que o
+          OpenFlow oferece <span class="quote">Tsou et al. (2012).</span>.
+          Ainda assim, devido à ampla adoção e suporte da comunidade, a
+          arquitetura de SDN baseada em OpenFlow é vista como o padrão, tanto
+          no desenvolvimento acadêmico quanto na implementação prática
+          <span class="quote">Nunes et al. (2014)</span>.
+        </p>
+      </div>
+    </div>
+  </section>
 
-    <footer class="footer">
-      <div class="container">
-        <div class="content">
-          <p><strong>Declaração de autoria</strong></p>
-          <p>
-            "Este trabalho foi totalmente produzido pelos autores que declaram
-            não terem violado os direitos autorais de terceiros, sejam eles
-            pessoas físicas ou jurídicas. Havendo textos, tabelas e figuras
-            transcritos de obras de terceiros com direitos autorais protegidos
-            ou de domínio público tal como idéias e conceitos de terceiros,
-            mesmo que sejam encontrados na Internet, os mesmos estão com os
-            devidos créditos aos autores originais e estão incluídas apenas com
-            o intuito de deixar o trabalho autocontido. O(s) autor(es) tem(êm)
-            ciência dos Artigos 297 a 299 do Código Penal Brasileiro e também
-            que o uso do artifício de copiar/colar texto de outras fontes e
-            outras formas de plágio é um ato ilícito, condenável e passível de
-            punição severa. No contexto da Universidade a punição não precisa se
-            restringir à reprovação na disciplina e pode gerar um processo
-            disciplinar que pode levar o(s) aluno(s) à suspensão;"
-          </p>
-          <p>EEL879 · REDES DE COMPUTADORES II · 2024.2</p>
+  <!-- Casos de Uso -->
+  <section id="section4" class="section">
+    <div class="container">
+      <h1 class="title">Casos de Uso</h1>
+      <p>
+        Nesta seção, será discutido um caso de aplicação de filtros DNS
+        utilizando a tecnologia HPE Network Protector. Embora simples, este
+        exemplo ilustra de forma clara a aplicação e o uso de SDNs. Além
+        disso, serão abordados brevemente alguns dos papéis fundamentais que a
+        SDN desempenha no 5G, na Internet das Coisas (IoT) e nas redes em
+        nuvem, tópicos de grande relevância e alta demanda atualmente.
+      </p>
+      <div class="subsection">
+        <h2 class="subsection-title">HPE Network Protector</h2>
+        O HPE Network Protector SDN Application é uma aplicação de segurança
+        voltada para Redes Definidas por Software (SDN), desenvolvida pela
+        Hewlett Packard Enterprise (HPE). Uma das funcionalidades da
+        ferramenta é a Filtragem de DNS, em que a aplicação bloqueia consultas
+        DNS que estejam relacionadas a domínios maliciosos, como sites de
+        phishing, malware ou botnets. Isso evita que dispositivos na rede
+        acessem destinos comprometidos.
+        <span class="quote">Hewlett Packard Enterprise (2014)</span>
+        Os itens abaixo, aliado à Figura 3, sugerem um passo a passo de como
+        isso é feito utilizando SDNs:
+        <ol>
+          <li>
+            Quando uma solicitação de resolução de DNS é feita (por exemplo,
+            quando um usuário tenta acessar um site), o dispositivo de rede
+            (como um switch OpenFlow) intercepta essa solicitação.
+          </li>
+          <li>
+            O switch OpenFlow encaminha os pacotes DNS ao controlador SDN, que
+            tem uma visão global da rede e pode tomar decisões com base no
+            conteúdo desses pacotes.
+          </li>
+          <li>
+            O controlador SDN recebe o pacote DNS e repassa essa informação
+            para a aplicação de segurança, como o HPE Network Protector,
+            através de uma API na interface norte.
+          </li>
+          <li>
+            A aplicação consulta um Banco de Dados para verificar o domínio
+          </li>
+          <li>
+            Se a aplicação determinar que o domínio deve ser bloqueado, ela
+            envia uma instrução ao controlador SDN para tomar uma ação
+            específica.
+          </li>
+          <li>
+            O controlador pode intruir o switch OpenFlow a: descartar a
+            solicitação DNS antes que ela chegue ao servidor DNS ou
+            redirecionar a solicitação DNS para uma página de advertência ou
+            um servidor DNS interno.
+          </li>
+        </ol>
+        <p>
+          Essa prática garante que novas ameaças e domínios maliciosos possam
+          ser bloqueados dinamicamente, com atualizações enviadas diretamente
+          aos switches OpenFlow. Antes da adoção de SDN, o processo de
+          configuração de filtros e regras de segurança, como o filtro de DNS,
+          precisava ser feito manualmente, roteador a roteador ou switch a
+          switch. Isso envolvia configurações individuais em cada dispositivo
+          de rede, o que tornava a administração de grandes redes complexa,
+          demorada e propensa a erros.
+        </p>
+        <div class="image-frame">
+          <img src="hpe.png" />
+          <figcaption>
+            Figura 3: Funcionamento do Filtro de DNS por SDN
+          </figcaption>
         </div>
       </div>
-    </footer>
+      <div class="subsection">
+        <h2 class="subsection-title">SDN e 5G</h2>
+        <p>
+          Uma das principais aplicações do 5G é o fatiamento da rede (Network
+          Slicing). Essa solução admite que uma infraestrutura física única
+          possa ser dividida em várias redes virtuais, cada uma configurada
+          para atender diferentes tipos de serviços (como baixa latência, alta
+          largura de banda, ou suporte massivo a dispositivos IoT). A partir
+          da separação dos planos de controle e dados, as SDNs permitem que as
+          políticas de rede para cada fatia sejam configuradas e aplicadas de
+          forma centralizada e programável.
+          <span class="quote">Babbar et al. (2022)</span>
+        </p>
+      </div>
+      <div class="subsection">
+        <h2 class="subsection-title">SDNs em redes IoT</h2>
+        <p>
+          Em redes IoT, em que dispositivos são heterogêneos e frequentemente
+          distribuídos, a SDN permite que administradores configurem,
+          monitorem e otimizem fluxos de dados de maneira eficiente,
+          garantindo qualidade de serviço (QoS) e segurança em tempo real. Por
+          exemplo, a SDN pode identificar dispositivos IoT vulneráveis e
+          isolar automaticamente o tráfego suspeito, reduzindo riscos de
+          ciberataques. Além disso, a SDN simplifica o gerenciamento da rede
+          ao automatizar a alocação de recursos e priorizar dispositivos ou
+          aplicações críticas, o que é essencial em ambientes de IoT com
+          requisitos variáveis de conectividade e processamento.
+          <span class="quote">Thorat et al. (2020)</span>
+        </p>
+      </div>
+      <div class="subsection">
+        <h2 class="subsection-title">SDNs e Redes em Nuvem</h2>
+        <p>
+          Em ambientes de nuvem, onde os recursos como servidores,
+          armazenamento e processamento, precisam ser provisionados de maneira
+          rápida e eficiente, as SDNs oferecem a capacidade de automatizar a
+          criação, configuração e gerenciamento de redes. Isso reduz o tempo e
+          o esforço necessário para provisionar redes virtuais e ajustar a
+          infraestrutura em resposta a demandas de cargas de trabalho em tempo
+          real.
+          <span class="quote">Lin and Lin (2014)</span>
+        </p>
+      </div>
+    </div>
+  </section>
 
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        const navbarBurgers = Array.prototype.slice.call(
-          document.querySelectorAll(".navbar-burger"),
-          0
-        );
+  <!-- Machine Learning -->
+  <section id="section5" class="section">
+    <div class="container">
+      <h1 class="title">Avanços em SDN com Machine Learning e IA</h1>
+      <p>
+        Nos últimos anos, com o avanço da tecnologia e o rápido crescimento da
+        Internet e das tecnologias de comunicação móvel, a infraestrutura, os
+        dispositivos e os recursos nos sistemas de rede tornaram-se mais
+        avançados e complexos. Para gerenciar, organizar, otimizar e manter os
+        sistemas de rede, muitas informações precisam ser consideradas e
+        utilizadas. No entanto, era difícil usar aprendizado de máquina em
+        redes tradicionalmente fechadas
+        <span class="quote">Shirmarz and Faezi (2023).</span>. A arquitetura
+        SDN separa o plano de controle do plano de dados, o que permite maior
+        flexibilidade e programabilidade da rede, o que criou a oportunidade
+        para pesquisadores utilizarem técnicas de aprendizado de máquina em
+        diferentes aspectos da rede. A seguir serão citados algumas linhas em
+        que o aprendizado tem sido aplicado ao contexto das SDN:
+      </p>
+      <ol>
+        <li>
+          <strong>Otimização de Roteamento: </strong>Em uma rede definida por
+          software, a tarefa de determinar o melhor caminho para os pacotes
+          viajarem de um ponto a outro pode considerar múltiplos parâmetros,
+          como latência, largura de banda, uso de recursos e condições de rede
+          em tempo real. Nesse problema, o aprendizado de máquina é aplicado
+          para resolver o problema de roteamento em SDN por meio de algoritmos
+          que aprendem padrões e características do tráfego da rede.
+          Algoritmos de aprendizado por reforço, aprendizado supervisionado e
+          não supervisionados são aplicados para esse problema
+          <span class="quote">Amin et al. (2021).</span>.
+        </li>
+        <li>
+          <strong>Segurança da Rede: </strong>Como a arquitetura de controle
+          de rede é centralizada e programável, a implementação de soluções
+          dinâmicas de segurança utilizando aprendizado de máquina é possível.
+          Nesse caso, aprendizado de máquina é aplicado na detecção de
+          anomalias na rede, na mitigação de ataques DDoS, identificação de
+          caminhos maliciosos e entre outros.
+        </li>
+        <li>
+          <strong>Qualidade de Experiência (QoE): </strong> Qualidade de
+          Experiência (QoE) refere-se à percepção do usuário sobre a qualidade
+          do serviço fornecido por uma rede, que pode ser influenciada por
+          fatores como latência, taxa de perda de pacotes, largura de banda, e
+          tempo de resposta. Em redes definidas por software, modelos
+          supervisionados são aplicados para prever a demanda futura de
+          tráfego com base em padrões anteriores, assim, permitindo que a rede
+          se ajuste proativamente a alocação de recursos, como largura de
+          banda <span class="quote">Abar et al. (2017)</span>.
+        </li>
+      </ol>
+    </div>
+  </section>
 
-        if (navbarBurgers.length > 0) {
-          navbarBurgers.forEach((burger) => {
-            burger.addEventListener("click", () => {
-              const target = burger.dataset.target;
-              const targetElement = document.getElementById(target);
+  <section class="section" id="references">
+    <div class="container">
+      <h1 class="title">Referências</h1>
+      <ol>
+        <li>
+          Abar, T., Letaifa, A., & Asmi, S. (2017, 06). Machine learning based
+          qoe prediction in sdn networks. In (p. 1395-1400). DOI:
+          10.1109/IWCMC.2017.7986488
+        </li>
+        <li>
+          Amin, R., Rojas, E., Aqdus, A., Ramzan, S., Casillas-Perez, D., &
+          Arco, J. (2021, 07). A survey on machine learning techniques for
+          routing optimization in sdn. IEEE Access, PP, 1-1. DOI:
+          10.1109/ACCESS.2021.3099092
+        </li>
+        <li>
+          Babbar, H., Rani, S., AlZubi, A. A., Singh, A., Nasser, N., & Ali,
+          A. (2022). Role of network slicing in software defined networking
+          for 5g: Use cases and future directions. IEEE Wireless
+          Communications, 29 (1), 112-118. DOI: 10.1109/MWC.001.2100318
+        </li>
+        <li>
+          Halpern, J. M., & Salim, J. H. (2010, March). Forwarding and Control
+          Element Separation (ForCES) Forwarding Element Model (No. 5812). RFC
+          5812. RFC Editor. Retrieved from https://www.rfc
+          -editor.org/info/rfc5812 DOI: 10.17487/RFC5812
+        </li>
+        <li>
+          Hewlett Packard Enterprise. (2014). Hp van sdn controller: Dns-based
+          malware detection and mitigation [Computer software manual].
+          Retrieved from https://www.hpe.com/us/en/networking.html (HP
+          Networking Documentation)
+        </li>
+        <li>
+          Lin, L., & Lin, P. (2014). Software-defined networking (sdn) for
+          cloud applications. In Z. Mahmood (Ed.), Cloud computing:
+          Challenges, limitations and r&d solutions (pp. 209–233). Cham:
+          Springer International Publishing. Retrieved from https://doi
+          .org/10 .1007/978 -3 -319 -10530 -7 9 DOI:
+          10.1007/978-3-319-10530-79
+        </li>
+        <li>
+          McKeown, N., Anderson, T., Balakrishnan, H., Parulkar, G., Peterson,
+          L., Rexford, J., . . . Turner, J. (2008, March). Openflow: enabling
+          innovation in campus networks. SIGCOMM Comput. Commun. Rev., 38 (2),
+          69–74. Retrieved from https://doi .org/10 .1145/1355734 .1355746
+          DOI: 10.1145/1355734.1355746
+        </li>
+        <li>
+          Nunes, B. A. A., Mendonca, M., Nguyen, X.-N., Obraczka, K., &
+          Turletti, T. (2014). A survey of softwaredefined networking: Past,
+          present, and future of programmable networks. IEEE Communications
+          Surveys Tutorials, 16 (3), 1617-1634. DOI:
+          10.1109/SURV.2014.012214.00180
+        </li>
+        <li>
+          Shirmarz, A., & Faezi, S. (2023, 06). A comprehensive survey on
+          machine learning using in software defined networks (sdn).
+          Human-Centric Intelligent Systems, 3 . DOI:
+          10.1007/s44230-023-00025-3
+        </li>
+        <li>
+          Thorat, P., Singh, S., Bhat, A., Lakshmi Narasimhan, V., & Jain, G.
+          (2020). Sdn-enabled iot: Ensuring reliability in iot networks
+          through software defined networks. In M. A. Matin (Ed.), Towards
+          cognitive iot networks (pp. 33–53). Cham: Springer International
+          Publishing. Retrieved from https://doi.org/10.1007/978-3-030-42573-9
+          4 DOI: 10.1007/978-3-030-42573-94
+        </li>
+        <li>
+          Tsou, T., Shi, X., Huang, J., Wang, Z., & Yin, X. (2012). Analysis
+          of comparisons between openflow and forces.. Retrieved from
+          https://api.semanticscholar.org/CorpusID:64043199
+        </li>
+      </ol>
+    </div>
+  </section>
 
-              burger.classList.toggle("is-active");
-              targetElement.classList.toggle("is-active");
-            });
+  <footer class="footer">
+    <div class="container">
+      <div class="content">
+        <p><strong>Declaração de autoria</strong></p>
+        <p>
+          "Este trabalho foi totalmente produzido pelos autores que declaram
+          não terem violado os direitos autorais de terceiros, sejam eles
+          pessoas físicas ou jurídicas. Havendo textos, tabelas e figuras
+          transcritos de obras de terceiros com direitos autorais protegidos
+          ou de domínio público tal como idéias e conceitos de terceiros,
+          mesmo que sejam encontrados na Internet, os mesmos estão com os
+          devidos créditos aos autores originais e estão incluídas apenas com
+          o intuito de deixar o trabalho autocontido. O(s) autor(es) tem(êm)
+          ciência dos Artigos 297 a 299 do Código Penal Brasileiro e também
+          que o uso do artifício de copiar/colar texto de outras fontes e
+          outras formas de plágio é um ato ilícito, condenável e passível de
+          punição severa. No contexto da Universidade a punição não precisa se
+          restringir à reprovação na disciplina e pode gerar um processo
+          disciplinar que pode levar o(s) aluno(s) à suspensão;"
+        </p>
+        <p>EEL879 · REDES DE COMPUTADORES II · 2024.2</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const navbarBurgers = Array.prototype.slice.call(
+        document.querySelectorAll(".navbar-burger"),
+        0
+      );
+
+      if (navbarBurgers.length > 0) {
+        navbarBurgers.forEach((burger) => {
+          burger.addEventListener("click", () => {
+            const target = burger.dataset.target;
+            const targetElement = document.getElementById(target);
+
+            burger.classList.toggle("is-active");
+            targetElement.classList.toggle("is-active");
           });
-        }
-      });
-    </script>
-  </body>
+        });
+      }
+    });
+  </script>
+</body>
+
 </html>
