@@ -31,6 +31,7 @@
         <a href="#section6" class="navbar-item">Arquitetura</a>
         <a href="#section3" class="navbar-item">Comunicação</a>
         <a href="#section4" class="navbar-item">Casos de Uso</a>
+        <a href="#section7" class="navbar-item">Segurança</a>
         <a href="#section5" class="navbar-item">Machine Learning</a>
         <a href="#references" class="navbar-item">Referências</a>
       </div>
@@ -176,6 +177,8 @@
         rápido desenvolvimento de serviços, e a possibilidade de ajustar dinâmica as condições de rede. O plano de dados
         continua restrito aos dispositivos de rede, que passam a operar como simples encaminhadores de pacote que seguem
         as regras do controlador.
+      </p>
+      <p>
         Essa arquitetura é construída em cima de protocolos e interfaces padronizadas, como o OpenFlow, que facilitam a
         comunicação entre o controlador e dispositivos de rede (interfaces southbound), assim como entre o controlador e
         as aplicações (interfaces northbound). Através desse modelo de interface, SDN promove interoperabilidade, reduz
@@ -402,16 +405,17 @@
       </p>
       <div class="subsection">
         <h2 class="subsection-title">HPE Network Protector</h2>
-        O HPE Network Protector SDN Application é uma aplicação de segurança
-        voltada para Redes Definidas por Software (SDN), desenvolvida pela
-        Hewlett Packard Enterprise (HPE). Uma das funcionalidades da
-        ferramenta é a Filtragem de DNS, em que a aplicação bloqueia consultas
-        DNS que estejam relacionadas a domínios maliciosos, como sites de
-        phishing, malware ou botnets. Isso evita que dispositivos na rede
-        acessem destinos comprometidos.
-        <span class="quote">Hewlett Packard Enterprise (2014)</span>
-        Os itens abaixo, aliado à Figura 3, sugerem um passo a passo de como
-        isso é feito utilizando SDNs:
+        <p>
+          O HPE Network Protector SDN Application é uma aplicação de segurança
+          voltada para Redes Definidas por Software (SDN), desenvolvida pela
+          Hewlett Packard Enterprise (HPE). Uma das funcionalidades da
+          ferramenta é a Filtragem de DNS, em que a aplicação bloqueia consultas
+          DNS que estejam relacionadas a domínios maliciosos, como sites de
+          phishing, malware ou botnets. Isso evita que dispositivos na rede
+          acessem destinos comprometidos.
+          <span class="quote">Hewlett Packard Enterprise (2014)</span>
+          Os itens abaixo, aliado à Figura 3, sugerem um passo a passo de como
+          isso é feito utilizando SDNs:
         <ol>
           <li>
             Quando uma solicitação de resolução de DNS é feita (por exemplo,
@@ -443,6 +447,7 @@
             um servidor DNS interno.
           </li>
         </ol>
+        </p>
         <p>
           Essa prática garante que novas ameaças e domínios maliciosos possam
           ser bloqueados dinamicamente, com atualizações enviadas diretamente
@@ -501,6 +506,95 @@
           infraestrutura em resposta a demandas de cargas de trabalho em tempo
           real.
           <span class="quote">Lin and Lin (2014)</span>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="section7">
+    <div class="container">
+      <h1 class="title">Segurança</h1>
+      <p>
+        A separação dos planos de dados e controle intrínseca das SDN's afeta a segurança em diversas maneira. Por um
+        lado, a centralização do controle pode tornar a rede mais segura, fornecendo uma visão global do estado da rede,
+        permitindo a aplicação consistente de políticas e detecção mais eficiente de ameaças. Administradores podem
+        implementar políticas de segurança em toda a rede a partir de um único ponto, em vez de configurar
+        individualmente os dispositivos; o que reduz a probabilidade de erros. Por outro lado, essa centralização
+        evidentemente introduz um único ponto de falha: se um atacante obtiver controle do controlador, ele
+        provavelmente obterá controle sobre toda a rede.
+      </p>
+      <p>
+        A mudança de controle baseado em hardware para baseado em software também traz profundas implicações em
+        segurança. Redes tradicionais dependem fortemente de hardware proprietário, com mecanismos de segurança
+        próprios, tornando acesso não autorizado e manipulação mais difícil. Como em SDN's esse controle é executado por
+        software, ele está sujeito aos mesmos problemas tradicionais de softwares, como bugs e exploits.
+      </p>
+      <div class="subsection">
+        <h2 class="subsection-title">Centralização</h2>
+        <p>
+          O ponto único de falha é uma preocupação primária. A dependência de um controlador central significa que, se
+          este controlador falhar devido a falhas de hardware, bugs de software ou ataques, toda a rede pode ser
+          afetada. Isso pode resultar em interrupções de serviço significativas, perda de conectividade e impactos
+          negativos nas operações comerciais. O controlador SDN é um alvo valioso para invasores, pois comprometer o
+          controlador pode permitir o controle total da rede. Ataques de Negação de Serviço (DoS) podem sobrecarregar o
+          controlador com tráfego excessivo, esgotando seus recursos e impedindo-o de gerenciar efetivamente a rede. A
+          exploração de vulnerabilidades no software do controlador pode conceder acesso não autorizado, permitindo que
+          invasores modifiquem políticas, interceptem dados confidenciais ou interrompam operações críticas.
+        </p>
+        <p>
+          Para mitigar o risco de um ponto único de falha, é essencial implementar redundância e alta disponibilidade.
+          Isso pode ser alcançado através da implantação de múltiplos controladores. A redundância garante que, se um
+          controlador falhar, outro possa assumir imediatamente suas funções, mantendo a continuidade do serviço sem
+          interrupções perceptíveis. A segurança robusta do controlador é igualmente crucial. Isso envolve a aplicação
+          de práticas de segurança rigorosas, como atualizações regulares de software, aplicação de patches de segurança
+          e desativação de serviços ou portas desnecessárias para minimizar a superfície de ataque. Implementar
+          autenticação forte e controles de acesso ajuda a garantir que apenas usuários autorizados possam interagir com
+          o controlador.
+        </p>
+      </div>
+      <div class="subsection">
+        <h2 class="subsection-title">Comunicação Controlador-Plano de Dados</h2>
+        <p>
+          As ameaças à interface southbound incluem ataques Man-in-the-Middle (MitM), onde um invasor intercepta e
+          possivelmente altera a comunicação entre o controlador e os dispositivos. Sem criptografia e autenticação
+          adequadas, as mensagens podem ser interceptadas, permitindo que invasores manipulem o comportamento da rede ou
+          acessem informações sensíveis. O acesso não autorizado às tabelas de fluxo nos dispositivos de rede também é
+          uma preocupação. Se um invasor conseguir comprometer um switch ou roteador, ele pode visualizar ou modificar
+          as regras de encaminhamento, desviando tráfego, espionando comunicações ou causando interrupções nos serviços.
+          As vulnerabilidades dos protocolos, como limitações no OpenFlow, podem ser exploradas. Versões anteriores do
+          OpenFlow não contavam com mecanismos robustos de autenticação e criptografia, tornando-as suscetíveis a
+          interceptação e manipulação por atacantes.
+        </p>
+        <p>
+          A implementação de comunicação segura entre o controlador e os dispositivos é fundamental. O uso de protocolos
+          seguros, como TLS/SSL, criptografa os dados em trânsito, impedindo que sejam interceptados ou alterados. Além
+          disso, a aplicação de autenticação mútua garante que tanto o controlador quanto os dispositivos confirmem a
+          identidade um do outro antes de trocar informações.
+          Para proteger as tabelas de fluxo, é importante restringir o acesso aos dispositivos de rede. Isso pode ser
+          feito através de controles de acesso baseados em função e segmentação de rede, garantindo que apenas entidades
+          autorizadas possam interagir com os dispositivos. Manter os dispositivos atualizados com as últimas correções
+          de segurança e firmware também ajuda a reduzir as vulnerabilidades exploráveis.
+          Em relação às vulnerabilidades dos protocolos, é crucial adotar versões atualizadas que incluam melhorias de
+          segurança. Participar de iniciativas da comunidade e seguir as melhores práticas recomendadas pelos órgãos de
+          padronização, como a Open Networking Foundation (ONF), pode ajudar a manter a segurança dos protocolos
+          utilizados.
+
+        </p>
+      </div>
+      <div class="subsection">
+        <h2 class="subsection-title">Segurança no Plano de Aplicação</h2>
+        <p>
+          Os exploits da API northbound podem ocorrer quando aplicações de terceiros não seguem práticas de segurança
+          adequadas. Vulnerabilidades nessas aplicações podem ser exploradas para comprometer o controlador, modificar
+          políticas de rede ou acessar dados confidenciais.
+          Além disso, aplicações maliciosas ou comprometidas representam uma ameaça significativa. Aplicações com
+          intenções maliciosas podem ser instaladas inadvertidamente ou podem ser comprometidas após a instalação. Isso
+          pode levar a alterações não autorizadas na rede, espionagem de tráfego ou interrupção de serviços.
+
+          Para mitigar esses riscos, é essencial implementar controles de acesso rigorosos para a interface northbound.
+          Isso inclui autenticação forte para garantir que apenas aplicações autorizadas possam interagir com o
+          controlador. O uso de certificados digitais e chaves criptográficas pode fortalecer ainda mais o processo de
+          autenticação.
         </p>
       </div>
     </div>
