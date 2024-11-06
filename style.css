@@ -1,6 +1,7 @@
 html {
   scroll-behavior: smooth;
 }
+
 body {
   font-family: "Roboto", sans-serif;
   line-height: 1.6;
@@ -49,7 +50,8 @@ body {
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   overflow: hidden;
-  margin: 20px 0;
+  margin: 20px auto;
+  max-width: 800px;
 }
 
 .image-frame img {
@@ -57,12 +59,14 @@ body {
   height: auto;
   display: block;
 }
+
 .image-frame figcaption {
   text-align: center;
   font-size: 16px;
   color: #555;
   padding: 10px 0;
-  background-color: #f9f9f9; /* Fundo sutil para destacar a legenda */
+  background-color: #f9f9f9;
+  /* Fundo sutil para destacar a legenda */
 }
 
 ol {
@@ -127,6 +131,7 @@ li {
   .hero-title {
     font-size: 2.5rem;
   }
+
   .hero .subtitle {
     font-size: 1.5rem;
   }
